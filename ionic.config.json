@@ -3,5 +3,6 @@
   "integrations": {
     "capacitor": {}
   },
-  "type": "custom"
+  "type": "custom",
+  "id": "3f33e21b"
 }
