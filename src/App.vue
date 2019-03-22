@@ -15,33 +15,34 @@
       <ion-checkbox></ion-checkbox>
 
       <!-- Disabled Checkbox -->
-      <ion-checkbox disabled></ion-checkbox>
+      <ion-checkbox disabled="true" mode="ios"></ion-checkbox>
 
+      <ion-checkbox indeterminate="true" mode="ios"></ion-checkbox>
       <!-- Checked Checkbox -->
-      <ion-checkbox checked></ion-checkbox>
+      <ion-checkbox checked="true" mode="ios"></ion-checkbox>
 
       <!-- Checkbox Colors -->
-      <ion-checkbox color="primary"></ion-checkbox>
-      <ion-checkbox color="secondary"></ion-checkbox>
-      <ion-checkbox color="danger"></ion-checkbox>
+      <ion-checkbox color="primary" mode="ios"></ion-checkbox>
+      <ion-checkbox color="secondary" mode="ios"></ion-checkbox>
+      <ion-checkbox color="danger" mode="ios"></ion-checkbox>
       <ion-checkbox color="light"></ion-checkbox>
-      <ion-checkbox color="dark"></ion-checkbox>
+      <ion-checkbox 
+        color="dark" 
+        id="drk" 
+        @input="input($event)" :value="drk.isChecked"
+      ></ion-checkbox>
 
+      {{ drk }}
       <!-- Checkboxes in a List -->
       <ion-list>
-        <ion-item>
-          <ion-label>Pepperoni</ion-label>
-          <ion-checkbox slot="end" value="pepperoni" checked></ion-checkbox>
-        </ion-item>
+        <ion-item v-for="entry in form" :key="entry.l">
+          <ion-label>{{entry.val}}</ion-label>
 
-        <ion-item>
-          <ion-label>Sausage</ion-label>
-          <ion-checkbox slot="end" value="sausage" disabled></ion-checkbox>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>Mushrooms</ion-label>
-          <ion-checkbox slot="end" value="mushrooms"></ion-checkbox>
+          <ion-checkbox
+            slot="end"
+            @input="entry.checked = $event.target.value"
+            :value="entry.isChecked"
+          ></ion-checkbox>
         </ion-item>
       </ion-list>
     </ion-content>
@@ -55,6 +56,27 @@ export default {
   name: "app",
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      form: [
+        { val: "Pepperoni", isChecked: true },
+        { val: "Sausage", isChecked: false },
+        { val: "Mushroom", isChecked: false }
+      ],
+      drk: {
+        isChecked: false
+      }
+    };
+  },
+  methods: {
+    input(e) {
+      console.log(this.drk.checked);
+      console.log(e);
+      
+      this.drk.isChecked = 'e.target.value'
+      // this.drk.isChecked = e.target.value
+    }
   }
 };
 </script>

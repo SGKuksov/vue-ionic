@@ -2,35 +2,61 @@
 
 ## Настройка ionic
 
-1. ionic init // создаем ionic.config.json
-   1.1. name
-   1.2. custom
+1. инициализируем ionic
 
-2. ionic link // связываем приложение с app flow
+```bash
+ionic init
+```
+
+```json ionic.config.json
+{
+  "type": "custom"
+}
+```
+
+2. связываем приложение с app flow
+
+```bash
+ionic link
+```
 
 ## Добавить компоненты ionic
 
-```html
+```html index.html
 <link
   href="https://unpkg.com/@ionic/core@4.1.2/css/ionic.bundle.css"
   rel="stylesheet"
 />
-<script src="https://unpkg.com/@ionic/core@4.1.2/dist/ionic.js"></script>
+```
+
+```js main.js
+import Ionic from "@ionic/vue";
+Vue.use(Ionic);
 ```
 
 ## Настройка слежения
 
-1. Добавить задачу для запуска
-   "ionic:serve": "vue-cli-service serve",
+Добавить задачу для запуска слежения
+
+```json package.json
+{
+  "ionic:serve": "vue-cli-service serve"
+}
+```
 
 ## Настройка сборки
 
-1. Добавить задачу на сборку vue в www
-   "ionic:build": "vue-cli-service build",
+Добавить задачу на сборку vue из www/
+
+```json package.json
+{
+  "ionic:build": "vue-cli-service build"
+}
+```
 
 ## Настройка и запуск capacitor
-capacitor.config.json
-```json
+
+```json capacitor.config.json
 {
   "appId": "io.ionic.starter.test2.funcfunc",
   "appName": "vueApp",
@@ -38,9 +64,23 @@ capacitor.config.json
   "webDir": "dist"
 }
 ```
-```
+
+```bash
 ionic capacitor add ios
 ionic capacitor copy ios
+```
+
+## Комментарии
+
+Не работает двойное связывание данных v-model
+Вместо него
+
+```html
+<ion-checkbox
+  slot="end"
+  @input="entry.checked = $event.target.value"
+  :value="entry.isChecked"
+></ion-checkbox>
 ```
 
 ## Project setup
