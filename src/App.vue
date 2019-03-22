@@ -5,3 +5,4 @@
 </template>
 
 <style src="@ionic/core/css/ionic.bundle.css"></style>
+<style src="@/assets/css/variables.css"></style>
