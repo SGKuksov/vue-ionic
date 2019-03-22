@@ -10,6 +10,10 @@ ionic init
 
 ```json ionic.config.json
 {
+  "name": "vueApp",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "custom"
 }
 ```
