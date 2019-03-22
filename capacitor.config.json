@@ -1,0 +1,6 @@
+{
+  "appId": "io.ionic.starter.test2.funcfunc",
+  "appName": "vueApp",
+  "bundledWebRuntime": false,
+  "webDir": "dist"
+}
