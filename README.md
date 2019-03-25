@@ -71,12 +71,13 @@ Vue.use(Ionic);
 
 ```bash
 ionic capacitor add ios
+ionic capacitor open ios
 ionic capacitor copy ios
 ```
 
 ## Комментарии
 
-Не работает двойное связывание данных v-model
+1. Не работает двойное связывание данных v-model
 Вместо него
 
 ```html
@@ -86,6 +87,12 @@ ionic capacitor copy ios
   :value="entry.isChecked"
 ></ion-checkbox>
 ```
+
+2. Подключение изображений через ion-img
+```html
+<ion-img alt="Vue logo" :src="require('@/assets/logo.png')"></ion-img>
+```
+
 
 ## Project setup
 

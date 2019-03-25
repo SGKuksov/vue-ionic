@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "ionic:build": "vue-cli-service build && ionic capacitor open ios && ionic capacitor copy ios"
   },
   "dependencies": {
+    "@capacitor/android": "^1.0.0-beta.19",
     "@capacitor/cli": "1.0.0-beta.19",
     "@capacitor/core": "1.0.0-beta.19",
     "@capacitor/ios": "^1.0.0-beta.19",
