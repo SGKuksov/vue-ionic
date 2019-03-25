@@ -5,7 +5,7 @@
       <ion-tab tab="flash" icon="flash" label="flash">
         <ion-header>
           <ion-toolbar>
-            <ion-title>Header</ion-title>
+            <ion-title>Header Flash</ion-title>
           </ion-toolbar>
         </ion-header>
 
@@ -14,7 +14,7 @@
       <ion-tab tab="apps" icon="apps" label="apps">
         <ion-header>
           <ion-toolbar>
-            <ion-title>Header</ion-title>
+            <ion-title>Header Apps</ion-title>
           </ion-toolbar>
         </ion-header>
 
@@ -23,7 +23,7 @@
       <ion-tab tab="send" icon="send" label="send">
         <ion-header>
           <ion-toolbar>
-            <ion-title>Header</ion-title>
+            <ion-title>Header Send</ion-title>
           </ion-toolbar>
         </ion-header>
 
